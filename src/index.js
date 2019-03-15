@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import NavigationBar from './component/navigation-bar';
+import AddressBook from './component/address-book';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const links = [
+    {
+        text: 'Courses',
+        href: 'http://www.thinkful.com/courses/'
+    },
+    {
+        text: 'Mentorship',
+        href: 'http://www.thinkful.com/mentorship/'
+    }
+]
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <div>
+        <NavigationBar title="Thinkful" links={links} />
+        <AddressBook/>
+    </div>, 
+    document.getElementById('root')
+    );
+
